@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  hospital-agent:
+    build: .
+    container_name: hospital-agent
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - PYTHONPATH=/app
+      - REDIS_URL=redis://hospital-redis:6379/0
+      - DATABASE_URL=postgresql://postgres:postgres123@postgres:5432/hospital_agent
+    depends_on:
+      - redis
+      - postgres
+    volumes:
+      # REMOVED: - ./hospital_agent:/app/hospital_agent
+      - ./logs:/app/logs
+      - ./data:/app/data
+    restart: unless-stopped
+    networks:
+      - hospital-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: hospital-redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+    networks:
+      - hospital-network
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: hospital-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres123
+      - POSTGRES_DB=hospital_agent
+    restart: unless-stopped
+    networks:
+      - hospital-network
+
+volumes:
+  redis-data:
+  postgres-data:
+
+networks:
+  hospital-network:
+    driver: bridge
