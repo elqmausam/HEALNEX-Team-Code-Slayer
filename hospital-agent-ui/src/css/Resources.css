@@ -1,0 +1,259 @@
+.resources-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 24px; }
+.resource-card { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); text-align: center; }
+.resource-icon { font-size: 48px; margin-bottom: 16px; }
+.resource-name { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+.resource-count { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+.progress-bar { width: 100%; height: 8px; background: #E5E7EB; border-radius: 4px; overflow: hidden; margin-bottom: 12px; }
+.progress-fill { height: 100%; background: #3B82F6; transition: width 0.3s; }
+.resource-status { padding: 6px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; display: inline-block; }
+.resource-status.critical { background: #FEE2E2; color: #991B1B; }
+.resource-status.good { background: #D1FAE5; color: #065F46; }
+.comparison-table { width: 100%; border-collapse: collapse; }
+.comparison-table th, .comparison-table td { padding: 12px; text-align: left; border-bottom: 1px solid #E5E7EB; }
+.comparison-table th { font-weight: 600; font-size: 13px; color: #6B7280; background: #F9FAFB; }
+
+/* Negotiation Form Styles */
+.negotiation-form { margin-top: 20px; }
+.form-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 20px; }
+.form-group { display: flex; flex-direction: column; }
+.form-group label { font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+.form-group input, .form-group select { 
+  padding: 10px 12px; 
+  border: 1px solid #D1D5DB; 
+  border-radius: 8px; 
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+.form-group input:focus, .form-group select:focus { 
+  outline: none; 
+  border-color: #3B82F6; 
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.negotiate-button {
+  width: 100%;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+}
+.negotiate-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(59, 130, 246, 0.4);
+}
+.negotiate-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Error Display */
+.negotiation-error {
+  margin-top: 20px;
+  padding: 16px;
+  background: #FEE2E2;
+  border: 1px solid #FCA5A5;
+  border-radius: 8px;
+  color: #991B1B;
+}
+.negotiation-error h4 { margin: 0 0 8px 0; font-size: 16px; }
+.negotiation-error p { margin: 0; font-size: 14px; }
+
+/* Negotiation Results */
+.negotiation-results {
+  margin-top: 24px;
+  padding: 20px;
+  background: #F9FAFB;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+}
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #E5E7EB;
+}
+.result-header h4 {
+  margin: 0;
+  font-size: 18px;
+  color: #111827;
+}
+.status-badge {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.status-badge.success {
+  background: #D1FAE5;
+  color: #065F46;
+}
+.status-badge.error {
+  background: #FEE2E2;
+  color: #991B1B;
+}
+
+.result-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.detail-label {
+  font-size: 12px;
+  color: #6B7280;
+  font-weight: 500;
+}
+.detail-value {
+  font-size: 16px;
+  color: #111827;
+  font-weight: 600;
+}
+
+/* Notification */
+.notification {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 4px solid;
+}
+.notification.error {
+  background: #FEF2F2;
+  border-color: #EF4444;
+}
+.notification.success {
+  background: #F0FDF4;
+  border-color: #22C55E;
+}
+.notification.warning {
+  background: #FFFBEB;
+  border-color: #F59E0B;
+}
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.notification-header strong {
+  font-size: 14px;
+  color: #111827;
+}
+.notification-time {
+  font-size: 12px;
+  color: #6B7280;
+}
+.notification p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #374151;
+}
+.action-required {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  font-size: 13px;
+}
+
+/* Workflow Details */
+.workflow-details {
+  margin-top: 20px;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+}
+.workflow-details h5 {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  color: #111827;
+}
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.workflow-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #F9FAFB;
+  border-radius: 6px;
+}
+.workflow-label {
+  font-size: 13px;
+  color: #6B7280;
+}
+.workflow-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.need-analysis {
+  margin-top: 16px;
+  padding: 16px;
+  background: #EFF6FF;
+  border-radius: 8px;
+  border: 1px solid #BFDBFE;
+}
+.need-analysis h6 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: #1E40AF;
+}
+.need-analysis p {
+  margin: 6px 0;
+  font-size: 13px;
+  color: #1E3A8A;
+}
+
+/* Contract Details */
+.contract-details {
+  margin-top: 20px;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+}
+.contract-details h5 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #111827;
+}
+.contract-details pre {
+  margin: 0;
+  padding: 12px;
+  background: #F9FAFB;
+  border-radius: 6px;
+  font-size: 12px;
+  overflow-x: auto;
+  color: #374151;
+}
+
+@media (max-width: 1024px) {
+  .form-grid { grid-template-columns: repeat(2, 1fr); }
+  .result-details { grid-template-columns: repeat(2, 1fr); }
+  .workflow-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .resources-grid { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  .result-details { grid-template-columns: 1fr; }
+}

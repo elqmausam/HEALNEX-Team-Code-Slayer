@@ -1,0 +1,14 @@
+.history-filters { display: flex; gap: 12px; margin-bottom: 24px; }
+.timeline-container { position: relative; padding-left: 40px; }
+.timeline-container::before { content: ''; position: absolute; left: 16px; top: 0; bottom: 0; width: 2px; background: #E5E7EB; }
+.timeline-item { position: relative; margin-bottom: 24px; }
+.timeline-marker { position: absolute; left: -32px; top: 8px; width: 16px; height: 16px; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px #E5E7EB; }
+.timeline-marker.negotiation { background: #3B82F6; }
+.timeline-marker.prediction { background: #10B981; }
+.timeline-marker.alert { background: #EF4444; }
+.timeline-card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.event-type { padding: 4px 12px; background: #F3F4F6; border-radius: 12px; font-size: 12px; font-weight: 600; }
+.event-time { font-size: 12px; color: #9CA3AF; }
+.timeline-card h4 { font-size: 16px; margin-bottom: 8px; }
+.timeline-card p { font-size: 14px; color: #6B7280; }

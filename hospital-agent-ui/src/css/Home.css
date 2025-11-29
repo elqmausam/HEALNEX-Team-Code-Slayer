@@ -1,0 +1,121 @@
+.home-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.home-content {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.home-header {
+  text-align: center;
+  color: white;
+  margin-bottom: 48px;
+}
+
+.home-header h1 {
+  font-size: 48px;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.home-header p {
+  font-size: 20px;
+  opacity: 0.95;
+}
+
+.mockups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+.mockup-card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transition: all 0.3s;
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+.mockup-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.mockup-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.mockup-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #1F2937;
+}
+
+.mockup-desc {
+  font-size: 14px;
+  color: #6B7280;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.mockup-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.feature-tag {
+  padding: 4px 12px;
+  background: #F3F4F6;
+  border-radius: 12px;
+  font-size: 12px;
+  color: #4B5563;
+}
+
+.view-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.view-button:hover {
+  transform: scale(1.05);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #ECFDF5;
+  color: #059669;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.home-footer {
+  text-align: center;
+  color: white;
+  margin-top: 48px;
+  opacity: 0.9;
+}
